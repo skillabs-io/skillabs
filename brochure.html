@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkilLabs Brochure | Industry-Led AI & Data Bootcamp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #38bdf8;
+            --accent-soft: rgba(56, 189, 248, 0.1);
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
+            --card-bg: rgba(30, 41, 59, 0.7);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            background-image:
+                linear-gradient(rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.92)),
+                url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .brochure-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Header / Logo Section */
+        header {
+            padding: 40px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            background: rgba(30, 41, 59, 0.4);
+        }
+
+        .logo-wrapper {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .logo-mark {
+            width: 50px;
+            height: 50px;
+            background: #ffffff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(56, 189, 248, 0.4);
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            color: var(--accent);
+        }
+
+        /* Hero Content */
+        .hero-section {
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        h1 span {
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-p {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 0 40px 60px;
+        }
+
+        .bootcamp-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px;
+            transition: transform 0.3s;
+        }
+
+        .bootcamp-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .item-list {
+            list-style: none;
+        }
+
+        .item-list li {
+            margin-bottom: 12px;
+            padding-left: 24px;
+            position: relative;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .item-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Complimentary Section */
+        .complimentary-section {
+            background: rgba(56, 189, 248, 0.05);
+            padding: 40px;
+            margin: 0 40px 60px;
+            border-radius: 20px;
+            border: 1px dashed var(--accent);
+            text-align: center;
+        }
+
+        .complimentary-section h3 {
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        .comp-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .comp-tag {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px 16px;
+            border-radius: 99px;
+            font-size: 0.85rem;
+            border: 1px solid var(--border);
+        }
+
+        /* Contact Footer */
+        .contact-footer {
+            padding: 40px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            background: rgba(11, 17, 32, 0.6);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item:hover {
+            color: var(--accent);
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .info-grid { grid-template-columns: 1fr; padding: 0 20px 40px; }
+            .brochure-container { margin: 20px; }
+            .contact-info { flex-direction: column; gap: 15px; }
+        }
+
+        @media print {
+            body { background: white; color: black; }
+            .brochure-container { box-shadow: none; border: 1px solid #ccc; max-width: 100%; margin: 0; }
+            .logo-mark { border: 1px solid #000; }
+            .logo-text, h1, h2, .item-list li { color: black !important; }
+            .complimentary-section { border: 1px solid #000; background: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="brochure-container">
+        <header>
+            <div class="logo-wrapper">
+                <div class="logo-mark">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 35px; height: 35px;">
+                        <path d="M30 20C30 14.4772 34.4772 10 40 10H60C65.5228 10 70 14.4772 70 20V40C70 45.5228 65.5228 50 60 50H40C34.4772 50 30 45.5228 30 40V20Z" fill="#38bdf8"/>
+                        <path d="M30 60C30 54.4772 34.4772 50 40 50H60C65.5228 50 70 54.4772 70 60V80C70 85.5228 65.5228 90 60 90H40C34.4772 90 30 85.5228 30 80V60Z" fill="#818cf8"/>
+                        <path d="M50 30V70" stroke="#0f172a" stroke-width="8" stroke-linecap="round"/>
+                        <path d="M40 50H60" stroke="#0f172a" stroke-width="8" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="logo-text">Skil<span>Labs</span></div>
+            </div>
+        </header>
+
+        <section class="hero-section">
+            <h1>Industry-Focused<br><span>Project & Training</span><br>Bootcamp</h1>
+            <p class="hero-p">An industry-integrated bootcamp designed for engineers who want to lead the next generation of high-scale products. 12 weeks of intense, project-based learning.</p>
+        </section>
+
+        <div class="info-grid">
+            <div class="bootcamp-card">
+                <span class="subtitle">Data Analyst Track</span>
+                <h2>Bootcamp A — Data & AI</h2>
+                <ul class="item-list">
+                    <li>Python for Data Analytics, Data Science & AI/ML</li>
+                    <li>SQL & Database Concepts</li>
+                    <li>Data Cleaning, Preprocessing & EDA</li>
+                    <li>Power BI & Data Visualization</li>
+                    <li>AI Tools — ChatGPT, Gemini, Google Studio, Quadratic AI & more</li>
+                    <li>IDEs — PyCharm, VS Code, Jupyter Notebook, MySQL Workbench</li>
+                </ul>
+            </div>
+
+            <div class="bootcamp-card">
+                <span class="subtitle">Backend Developer Track</span>
+                <h2>Bootcamp B — Java Dev</h2>
+                <ul class="item-list">
+                    <li>Java Developer Fundamentals & Advanced</li>
+                    <li>Spring Boot, JPA & Hibernate</li>
+                    <li>Docker, Kubernetes & Apache Kafka</li>
+                    <li>Git & GitHub Version Control</li>
+                    <li>Low Level & High Level System Design</li>
+                    <li>IDEs — IntelliJ IDEA, GitHub Copilot, MySQL Workbench</li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="complimentary-section">
+            <h3>Plus Complimentary Career Support</h3>
+            <div class="comp-grid">
+                <div class="comp-tag">Capstone Industry Project</div>
+                <div class="comp-tag">Communication Skills</div>
+                <div class="comp-tag">Interview Assistance</div>
+                <div class="comp-tag">LinkedIn & Resume Building</div>
+                <div class="comp-tag">Comprehensive Notes</div>
+            </div>
+        </section>
+
+        <footer class="contact-footer">
+            <div class="contact-info">
+                <a href="tel:+918446486648" class="contact-item">
+                    <span>📞</span> +91 8446486648
+                </a>
+                <a href="mailto:skillabs.io@gmail.com" class="contact-item">
+                    <span>📧</span> skillabs.io@gmail.com
+                </a>
+            </div>
+            <p class="copyright">© 2026 SkilLabs — Industry Based Project & Training Bootcamp. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
+
