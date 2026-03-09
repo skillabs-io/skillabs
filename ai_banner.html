@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Training Institute Banner</title>
+    <style>
+        :root {
+            --primary-bg: #030712;
+            --accent-blue: #38bdf8;
+            --accent-purple: #818cf8;
+            --accent-green: #10b981;
+            --text-white: #f8fafc;
+            --card-bg: rgba(30, 41, 59, 0.7);
+        }
+
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #0f172a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .banner {
+            width: 1100px;
+            height: 650px;
+            background: radial-gradient(circle at top left, #1e1b4b, #030712);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Company Logo Style */
+        .header {
+            padding: 30px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 900;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text-white);
+            letter-spacing: -1px;
+        }
+
+        .logo-text span {
+            color: var(--accent-blue);
+        }
+
+        .hero-section {
+            display: flex;
+            flex: 1;
+            padding: 0 60px 40px 60px;
+            z-index: 5;
+        }
+
+        .content {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .badge {
+            background: linear-gradient(90deg, rgba(56, 189, 248, 0.2), transparent);
+            border-left: 4px solid var(--accent-blue);
+            color: var(--accent-blue);
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            width: fit-content;
+        }
+
+        h1 {
+            color: var(--text-white);
+            font-size: 3.8rem;
+            margin: 0 0 20px 0;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+        }
+
+        h1 span {
+            background: linear-gradient(to right, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .description {
+            color: #94a3b8;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 35px;
+            max-width: 550px;
+        }
+
+        /* Tech Stack Grid */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        .tech-item {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 10px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .tech-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-blue);
+            background: rgba(56, 189, 248, 0.1);
+        }
+
+        .tech-icon {
+            width: 28px;
+            height: 28px;
+            margin-bottom: 8px;
+        }
+
+        .tech-name {
+            font-size: 0.65rem;
+            color: #cbd5e1;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--accent-blue);
+            color: #030712;
+            box-shadow: 0 10px 15px -3px rgba(56, 189, 248, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            background: #7dd3fc;
+        }
+
+        .side-info {
+            flex: 0.8;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 24px;
+            border-radius: 20px;
+            width: 320px;
+            margin-bottom: 20px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: #e2e8f0;
+        }
+
+        .feature-item:last-child { margin-bottom: 0; }
+
+        .check-circle {
+            width: 20px;
+            height: 20px;
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--accent-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        /* Decorative Elements */
+        .accent-circle {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(129, 140, 248, 0.1) 0%, transparent 70%);
+            top: -200px;
+            right: -100px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="banner">
+        <div class="accent-circle"></div>
+
+        <div class="header">
+            <div class="logo-container">
+                <div class="logo-icon">S</div>
+                <div class="logo-text">Skil<span>Labs</span></div>
+            </div>
+            <div style="color: #64748b; font-weight: 600;">Industry-Led Training</div>
+        </div>
+
+        <div class="hero-section">
+            <div class="content">
+                <div class="badge">🔥 2026 PLACEMENT BOOTCAMP</div>
+                <h1>Industry-Ready <br><span>Data & Backend</span></h1>
+                <p class="description">Master the most in-demand tools with 10+ industry-scale projects. Go from Fundamentals to Senior Developer in 16 weeks.</p>
+
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <!-- Python Original Colors -->
+                        <svg class="tech-icon" viewBox="0 0 24 24">
+                            <path d="M11.62 0c-2.3 0-2.15 1-2.15 1s.02 1.02.45 1.58c.43.56 1.15.54 1.15.54h3.15s1.2-.07 1.2 1.18v2.75s.1 1.2-1.18 1.2h-4.3s-1.18-.08-1.18 1.2v1.35s.03 1.12 1.05 1.12l4.85-.02s1.43-.1 1.43-1.42V7.15s.15-1.58-1.32-1.58H11.6s-1.2 0-1.2-1.15V1.2s-.03-1.2 1.22-1.2z" fill="#3776ab"/>
+                            <path d="M8.13 5.37c-1.43 0-1.32 1.58-1.32 1.58h3.15s1.15-.02 1.58.42c.43.43.45 1.15.45 1.15V11.3s-.07 1.2-1.2 1.2H6.42s-1.2-.1-1.2 1.15v1.3s.03 1.23 1.2 1.23h4.3s1.2-.08 1.2-1.2l-.02-2.75s.1-1.2-1.2-1.2H6.42s-1.42.06-1.42-1.35V7c0-2.3 3.12-1.6 3.12-1.6z" fill="#ffd343"/>
+                        </svg>
+                        <span class="tech-name">PYTHON</span>
+                    </div>
+                    <div class="tech-item">
+                        <!-- Java Original Colors -->
+                        <svg class="tech-icon" viewBox="0 0 24 24">
+                            <path d="M6.16 19.33c0 .54.55.98 1.45 1.35 1-.22 2.3-.43 3.65-.43 1.43 0 2.5.21 3.23.44.82-.36 1.3-.77 1.3-1.26 0-.6-.73-1.07-2-1.4 a18.8 18.8 0 0 0-6.22 0c-1.4.38-2 1-2 1.3z" fill="#5382a1"/>
+                            <path d="M12.5 0s-2 .5-2 3c0 1 1 2 2 3.5s1 2.5 0 3.5c-.5.5-1 .5-1.5 0 0 0 1 1 1.5 1s1.5-1 1.5-2.5-1-2.5-1.5-4c0-.5 0-1 .5-1.5z" fill="#e76f00"/>
+                        </svg>
+                        <span class="tech-name">JAVA</span>
+                    </div>
+                    <div class="tech-item">
+                        <!-- SQL (PostgreSQL/Generic) Color -->
+                        <svg class="tech-icon" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 4.02 2 6.5s4.48 4.5 10 4.5 10-2.02 10-4.5S17.52 2 12 2z" fill="#336791"/>
+                            <path d="M2 12v3c0 2.48 4.48 4.5 10 4.5s10-2.02 10-4.5v-3c0 2.48-4.48 4.5-10 4.5S2 14.48 2 12z" fill="#336791"/>
+                            <path d="M2 17.5v3c0 2.48 4.48 4.5 10 4.5s10-2.02 10-4.5v-3c0 2.48-4.48 4.5-10 4.5S2 19.98 2 17.5z" fill="#336791"/>
+                        </svg>
+                        <span class="tech-name">SQL</span>
+                    </div>
+                    <div class="tech-item">
+                        <!-- Power BI Color -->
+                        <svg class="tech-icon" viewBox="0 0 24 24">
+                            <path d="M19 22.5H5c-.28 0-.5-.22-.5-.5V2c0-.28.22-.5.5-.5h14c.28 0 .5.22.5.5v20c0 .28-.22.5-.5.5z" fill="#F2C811"/>
+                            <path d="M11 19h-2v-8h2v8zm4 0h-2v-5h2v5zm4 0h-2v-2h2v2z" fill="#E1AD0E"/>
+                        </svg>
+                        <span class="tech-name">POWER BI</span>
+                    </div>
+                    <div class="tech-item">
+                        <!-- Pandas Color -->
+                        <svg class="tech-icon" viewBox="0 0 24 24">
+                            <path d="M4.5 4.5h15v15h-15z" fill="#150458"/>
+                            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm3 11h-2v-2h2v2zm-3 0h-2v-2h2v2zm-3 0H7v-2h2v2z" fill="#FFCA00"/>
+                        </svg>
+                        <span class="tech-name">PANDAS</span>
+                    </div>
+                    <div class="tech-item">
+                        <!-- NumPy Original -->
+                        <svg class="tech-icon" viewBox="0 0 24 24">
+                            <path d="M12 2L2.5 7.5v8.9L12 21.9l9.5-5.5V7.5L12 2z" fill="#013243"/>
+                            <path d="M12 2l9.5 5.5v2.8L12 4.8l-9.5 5.5V7.5L12 2z" fill="#4dabcf"/>
+                            <path d="M12 21.9L2.5 16.4V13.6L12 19.1l9.5-5.5v2.8l-9.5 5.5z" fill="#4dabcf"/>
+                        </svg>
+                        <span class="tech-name">NUMPY</span>
+                    </div>
+                    <div class="tech-item">
+                        <!-- Seaborn Original -->
+                        <svg class="tech-icon" viewBox="0 0 24 24">
+                            <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z" fill="#4c8cb5"/>
+                            <path d="M8 12c0 2.209 1.791 4 4 4s4-1.791 4-4-1.791-4-4-4-4 1.791-4 4z" fill="#8dc1e3"/>
+                        </svg>
+                        <span class="tech-name">SEABORN</span>
+                    </div>
+                    <div class="tech-item">
+                        <!-- Matplotlib Original -->
+                        <svg class="tech-icon" viewBox="0 0 24 24">
+                            <path d="M2 22h20V2H2v20z" fill="#11557c"/>
+                            <path d="M5 19h14V5H5v14z" fill="white"/>
+                            <path d="M7 16h2v-6H7v6zm3 0h2V7h-2v9zm3 0h2v-4h-2v4zm3 0h2v-8h-2v8z" fill="#11557c"/>
+                        </svg>
+                        <span class="tech-name">MATPLOTLIB</span>
+                    </div>
+                    <div class="tech-item">
+                        <!-- GitHub Original -->
+                        <svg class="tech-icon" viewBox="0 0 24 24">
+                            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" fill="white"/>
+                        </svg>
+                        <span class="tech-name">GIT/GITHUB</span>
+                    </div>
+                    <div class="tech-item">
+                        <!-- PyTorch Original -->
+                        <svg class="tech-icon" viewBox="0 0 24 24">
+                            <path d="M12 22s8-4 8-10V4l-8-2-8 2v8c0 6 8 10 8 10z" fill="#EE4C2C"/>
+                            <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z" fill="white" opacity="0.3"/>
+                        </svg>
+                        <span class="tech-name">PYTORCH</span>
+                    </div>
+                    <div class="tech-item">
+                        <!-- Scikit-learn Original -->
+                        <svg class="tech-icon" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" fill="#F7931E"/>
+                            <path d="M12 22l10-5-10-5-10 5 10 5z" fill="#3670A0"/>
+                        </svg>
+                        <span class="tech-name">SKLEARN</span>
+                    </div>
+                    <div class="tech-item">
+                        <!-- Backend Color -->
+                        <svg class="tech-icon" viewBox="0 0 24 24">
+                            <path d="M4 4h16v16H4V4zm2 2v12h12V6H6zm2 2h8v2H8V8zm0 4h8v2H8v-2z" fill="#38bdf8"/>
+                        </svg>
+                        <span class="tech-name">BACKEND</span>
+                    </div>
+                </div>
+
+                <div class="cta-group">
+                    <a href="#" class="btn btn-primary">Apply Now</a>
+                    <div style="color: #94a3b8; font-size: 0.9rem;">
+                        <strong>Next Cohort:</strong> Mar 25
+                    </div>
+                </div>
+            </div>
+
+            <div class="side-info">
+                <div class="feature-card">
+                    <div class="feature-item">
+                        <div class="check-circle">✓</div>
+                        <span>Real-world Capstone Projects</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-circle">✓</div>
+                        <span>1-on-1 Mentorship</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-circle">✓</div>
+                        <span>Resume & LinkedIn Review</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="check-circle">✓</div>
+                        <span>Placement Assistance</span>
+                    </div>
+                </div>
+
+                <div class="feature-card" style="background: linear-gradient(to bottom right, rgba(56,189,248,0.1), transparent);">
+                    <div style="color: var(--accent-blue); font-weight: 800; font-size: 1.5rem; margin-bottom: 5px;">100%</div>
+                    <div style="color: #94a3b8; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Hands-on Curriculum</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
