@@ -3,402 +3,645 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Training Institute Banner</title>
+    <title>SkilLabs | Industry-Led AI & Data Bootcamp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-bg: #030712;
-            --accent-blue: #38bdf8;
-            --accent-purple: #818cf8;
-            --accent-green: #10b981;
-            --text-white: #f8fafc;
-            --card-bg: rgba(30, 41, 59, 0.7);
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #38bdf8;
+            --accent-soft: rgba(56, 189, 248, 0.1);
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --glass: rgba(30, 41, 59, 0.7);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            margin: 0;
-            padding: 40px;
-            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: #0f172a;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        .banner {
-            width: 1100px;
-            height: 650px;
-            background: radial-gradient(circle at top left, #1e1b4b, #030712);
-            border-radius: 24px;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Company Logo Style */
-        .header {
-            padding: 30px 60px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 10;
-        }
-
-        .logo-container {
+        /* Better Logo Concept */
+        .logo-wrapper {
             display: flex;
             align-items: center;
             gap: 12px;
+            text-decoration: none;
         }
 
-        .logo-icon {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-            border-radius: 10px;
+        .logo-mark {
+            position: relative;
+            width: 44px;
+            height: 44px;
+            background: #ffffff;
+            border-radius: 12px;
             display: flex;
-            justify-content: center;
             align-items: center;
-            font-weight: 900;
-            color: white;
-            font-size: 24px;
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(56, 189, 248, 0.4);
+            overflow: hidden;
+        }
+
+        .logo-mark svg {
+            width: 32px;
+            height: 32px;
         }
 
         .logo-text {
-            font-size: 28px;
-            font-weight: 800;
-            color: var(--text-white);
-            letter-spacing: -1px;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: var(--text-main);
         }
 
         .logo-text span {
-            color: var(--accent-blue);
+            color: var(--accent);
         }
 
-        .hero-section {
+        /* Navigation */
+        nav {
+            padding: 24px 60px;
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            background: rgba(15, 23, 42, 0.8);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dim);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(56, 189, 248, 0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 60px 100px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            align-items: center;
+            min-height: 100vh;
+            background: radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 50%);
+            gap: 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero-content {
+            text-align: left;
+        }
+
+        .hero-illustration {
             flex: 1;
-            padding: 0 60px 40px 60px;
-            z-index: 5;
-        }
-
-        .content {
-            flex: 1.2;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            justify-content: flex-end;
+            position: relative;
         }
 
-        .badge {
-            background: linear-gradient(90deg, rgba(56, 189, 248, 0.2), transparent);
-            border-left: 4px solid var(--accent-blue);
-            color: var(--accent-blue);
-            padding: 8px 16px;
-            font-size: 0.9rem;
+        .corporate-illustration {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+        }
+
+        .badge-new {
+            background: var(--accent-soft);
+            color: var(--accent);
+            padding: 6px 14px;
+            border-radius: 99px;
+            font-size: 0.85rem;
             font-weight: 700;
-            margin-bottom: 20px;
-            width: fit-content;
+            margin-bottom: 24px;
+            display: inline-block;
+            border: 1px solid rgba(56, 189, 248, 0.2);
         }
 
         h1 {
-            color: var(--text-white);
-            font-size: 3.8rem;
-            margin: 0 0 20px 0;
-            line-height: 1.05;
-            letter-spacing: -0.02em;
+            font-size: 4rem;
+            line-height: 1.1;
+            font-weight: 800;
+            margin-bottom: 24px;
+            letter-spacing: -2px;
         }
 
         h1 span {
-            background: linear-gradient(to right, #60a5fa, #a78bfa);
+            background: linear-gradient(to right, #38bdf8, #818cf8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .description {
-            color: #94a3b8;
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 35px;
+        .hero-p {
+            font-size: 1.25rem;
+            color: var(--text-dim);
+            margin-bottom: 40px;
             max-width: 550px;
         }
 
-        /* Tech Stack Grid */
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 15px;
-            margin-bottom: 40px;
-            max-width: 600px;
+        /* Tech Stack Section */
+        .tech-section {
+            padding: 100px 60px;
+            background: #0b1120;
         }
 
-        .tech-item {
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 10px;
-            border-radius: 12px;
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .tech-grid-web {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tech-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            padding: 32px 24px;
+            border-radius: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(10px);
         }
 
-        .tech-item:hover {
+        .tech-card:hover {
+            border-color: var(--accent);
+            background: rgba(56, 189, 248, 0.05);
+            transform: translateY(-12px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .tech-card img {
+            width: 52px;
+            height: 52px;
+            margin-bottom: 16px;
+        }
+
+        .tech-card span {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 60px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Bootcamp Section Styles */
+        .bootcamps-section {
+            padding: 100px 60px;
+            background: var(--primary);
+        }
+
+        .bootcamp-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .bootcamp-card {
+            background: var(--secondary);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 40px;
+            transition: transform 0.3s;
+        }
+
+        .bootcamp-card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent-blue);
-            background: rgba(56, 189, 248, 0.1);
+            border-color: var(--accent);
         }
 
-        .tech-icon {
-            width: 28px;
-            height: 28px;
-            margin-bottom: 8px;
+        .bootcamp-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 24px;
+            color: var(--accent);
         }
 
-        .tech-name {
-            font-size: 0.65rem;
-            color: #cbd5e1;
-            font-weight: 600;
+        .bootcamp-list {
+            list-style: none;
+        }
+
+        .bootcamp-list li {
+            margin-bottom: 12px;
+            padding-left: 28px;
+            position: relative;
+            color: var(--text-dim);
+        }
+
+        .bootcamp-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .complimentary-box {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(129, 140, 248, 0.1));
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 24px;
+            padding: 40px;
+            margin-top: 40px;
             text-align: center;
         }
 
-        .cta-group {
-            display: flex;
+        .complimentary-box h3 {
+            margin-bottom: 24px;
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        .complimentary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            align-items: center;
         }
 
-        .btn {
-            padding: 16px 32px;
+        .comp-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
             border-radius: 12px;
-            font-weight: 700;
+            font-weight: 500;
+        }
+
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding-top: 120px;
+                text-align: center;
+                gap: 40px;
+            }
+            .hero-content {
+                text-align: center;
+                margin: 0 auto;
+            }
+            .hero-illustration {
+                justify-content: center;
+            }
+            h1 { font-size: 3rem; }
+            nav { padding: 20px 30px; }
+            .hero, .tech-section, .features, footer { padding-left: 30px; padding-right: 30px; }
+        }
+
+        @media (max-width: 768px) {
+            .bootcamp-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        footer {
+            padding: 80px 60px;
+            background: #0b1120;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-brand {
+            max-width: 400px;
+        }
+
+        .footer-p {
+            color: var(--text-dim);
+            margin-top: 20px;
+            font-size: 0.95rem;
+        }
+
+        .footer-links-container {
+            display: flex;
+            gap: 100px;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 24px;
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a {
+            color: var(--text-dim);
             text-decoration: none;
-            font-size: 1rem;
-            transition: all 0.3s;
+            transition: color 0.3s;
+            font-size: 0.95rem;
         }
 
-        .btn-primary {
-            background: var(--accent-blue);
-            color: #030712;
-            box-shadow: 0 10px 15px -3px rgba(56, 189, 248, 0.3);
+        .footer-column ul li a:hover {
+            color: var(--accent);
         }
 
-        .btn-primary:hover {
-            transform: scale(1.05);
-            background: #7dd3fc;
-        }
-
-        .side-info {
-            flex: 0.8;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-end;
-        }
-
-        .feature-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 24px;
-            border-radius: 20px;
-            width: 320px;
-            margin-bottom: 20px;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-            color: #e2e8f0;
-        }
-
-        .feature-item:last-child { margin-bottom: 0; }
-
-        .check-circle {
-            width: 20px;
-            height: 20px;
-            background: rgba(16, 185, 129, 0.2);
-            color: var(--accent-green);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-        }
-
-        /* Decorative Elements */
-        .accent-circle {
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(129, 140, 248, 0.1) 0%, transparent 70%);
-            top: -200px;
-            right: -100px;
-            z-index: 1;
+        @media (max-width: 768px) {
+            .footer-links-container {
+                gap: 50px;
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="banner">
-        <div class="accent-circle"></div>
+    <nav>
+        <a href="#" class="logo-wrapper">
+            <div class="logo-mark">
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M30 20C30 14.4772 34.4772 10 40 10H60C65.5228 10 70 14.4772 70 20V40C70 45.5228 65.5228 50 60 50H40C34.4772 50 30 45.5228 30 40V20Z" fill="#38bdf8"/>
+                    <path d="M30 60C30 54.4772 34.4772 50 40 50H60C65.5228 50 70 54.4772 70 60V80C70 85.5228 65.5228 90 60 90H40C34.4772 90 30 85.5228 30 80V60Z" fill="#818cf8"/>
+                    <path d="M50 30V70" stroke="white" stroke-width="8" stroke-linecap="round"/>
+                    <path d="M40 50H60" stroke="white" stroke-width="8" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="logo-text">Skil<span>Labs</span></div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#bootcamps">Bootcamps</a></li>
+            <li><a href="#curriculum">Curriculum</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#mentorship">Mentorship</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <a href="#" class="btn btn-primary">Enroll Now</a>
+    </nav>
 
-        <div class="header">
-            <div class="logo-container">
-                <div class="logo-icon">S</div>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Industry-Focused<br><span>Project & Training</span><br>Bootcamp</h1>
+            <p class="hero-p">An industry-integrated bootcamp designed for engineers who want to lead the next generation of high-scale products. 12 weeks of intense, project-based learning.</p>
+            <div style="display: flex; gap: 16px;">
+                <a href="#" class="btn btn-primary" style="padding: 16px 32px;">Apply Today</a>
+                <a href="#" class="btn" style="border: 1px solid var(--border); color: white;">Download Syllabus</a>
+            </div>
+        </div>
+        <div class="hero-illustration">
+            <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=800" alt="Advanced Neural Network Visualization" class="corporate-illustration" style="border-radius: 24px; box-shadow: 0 20px 50px rgba(56, 189, 248, 0.15); border: 1px solid var(--border); transform: perspective(1000px) rotateY(-5deg);">
+        </div>
+    </section>
+
+    <section class="tech-section" id="curriculum">
+        <div class="section-header">
+            <h2>Modern Tech Stack</h2>
+            <p style="color: var(--text-dim); margin-top: 10px;">Master the tools used by industry leaders</p>
+        </div>
+
+        <div class="tech-grid-web">
+            <!-- Python -->
+            <div class="tech-card">
+                <img src="https://www.vectorlogo.zone/logos/python/python-icon.svg" alt="Python Logo">
+                <span>Python</span>
+            </div>
+            <!-- Java -->
+            <div class="tech-card">
+                <img src="https://www.vectorlogo.zone/logos/java/java-icon.svg" alt="Java Logo">
+                <span>Java</span>
+            </div>
+            <!-- MySQL -->
+            <div class="tech-card">
+                <img src="https://www.vectorlogo.zone/logos/mysql/mysql-icon.svg" alt="MySQL Logo">
+                <span>MySQL</span>
+            </div>
+            <!-- Power BI -->
+            <div class="tech-card">
+                <img src="https://img.icons8.com/color/512/microsoft-power-bi.png" alt="Power BI Logo">
+                <span>Power BI</span>
+            </div>
+            <!-- Pandas -->
+            <div class="tech-card">
+                <img src="https://pandas.pydata.org/static/img/pandas_white.svg" alt="Pandas Logo">
+                <span>Pandas</span>
+            </div>
+            <!-- PyTorch -->
+            <div class="tech-card">
+                <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="PyTorch Logo">
+                <span>PyTorch</span>
+            </div>
+            <!-- NumPy -->
+            <div class="tech-card">
+                <img src="https://www.vectorlogo.zone/logos/numpy/numpy-icon.svg" alt="NumPy Logo">
+                <span>NumPy</span>
+            </div>
+            <!-- Scikit-learn -->
+            <div class="tech-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/1200px-Scikit_learn_logo_small.svg.png" alt="Scikit-learn Logo">
+                <span>Scikit-learn</span>
+            </div>
+            <!-- GitHub -->
+            <div class="tech-card">
+                <img src="https://www.vectorlogo.zone/logos/github/github-icon.svg" alt="GitHub Logo">
+                <span>GitHub</span>
+            </div>
+            <!-- Git -->
+            <div class="tech-card">
+                <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git Logo">
+                <span>Git</span>
+            </div>
+            <!-- Kafka -->
+            <div class="tech-card">
+                <img src="https://www.vectorlogo.zone/logos/apache_kafka/apache_kafka-icon.svg" alt="Kafka Logo">
+                <span>Kafka</span>
+            </div>
+            <!-- Spring Boot -->
+            <div class="tech-card">
+                <img src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg" alt="Spring Boot Logo">
+                <span>Spring Boot</span>
+            </div>
+            <!-- Kubernetes -->
+            <div class="tech-card">
+                <img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="Kubernetes Logo">
+                <span>Kubernetes</span>
+            </div>
+            <!-- Docker -->
+            <div class="tech-card">
+                <img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt="Docker Logo">
+                <span>Docker</span>
+            </div>
+            <!-- Matplotlib -->
+            <div class="tech-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg" alt="Matplotlib Logo">
+                <span>Matplotlib</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="f-card">
+            <div class="f-icon">🚀</div>
+            <h3>Project Driven</h3>
+            <p style="color: var(--text-dim); margin-top: 12px;">Build 10+ industry-scale projects that simulate real deployment environments.</p>
+        </div>
+        <div class="f-card">
+            <div class="f-icon">👥</div>
+            <h3>Expert Mentors</h3>
+            <p style="color: var(--text-dim); margin-top: 12px;">Direct 1-on-1 access to industry experts from top tier companies.</p>
+        </div>
+        <div class="f-card">
+            <div class="f-icon">💼</div>
+            <h3>Career Launch</h3>
+            <p style="color: var(--text-dim); margin-top: 12px;">Resume building, mock interviews, and direct placement assistance.</p>
+        </div>
+    </section>
+
+    <section class="bootcamps-section" id="bootcamps">
+        <div class="section-header">
+            <h2>WHAT YOU WILL LEARN</h2>
+            <p style="color: var(--text-dim); margin-top: 10px;">Comprehensive curriculum designed for industry readiness</p>
+        </div>
+
+        <div class="bootcamp-container">
+            <!-- Bootcamp A -->
+            <div class="bootcamp-card">
+                <h3>Bootcamp A</h3>
+                <ul class="bootcamp-list">
+                    <li>Python for Data analytics, Data Scientist, Business Analytics, AI/ML Engineer</li>
+                    <li>SQL & Database concept</li>
+                    <li>Data cleaning and preprocessing, EDA</li>
+                    <li>POWER BI</li>
+                    <li>AI TOOLS - ChatGPT, Gemini, Google studio, Quadratic AI and many more etc.</li>
+                    <li>IDE - PyCharm, VScode, Jupyter Notebook, MySQL Workbench</li>
+                </ul>
+            </div>
+            <!-- Bootcamp B -->
+            <div class="bootcamp-card">
+                <h3>Bootcamp B</h3>
+                <ul class="bootcamp-list">
+                    <li>Java developer</li>
+                    <li>Spring Boot, JPA, Hibernate</li>
+                    <li>Docker, Kubernetes, Apache kafka</li>
+                    <li>Git & GitHub</li>
+                    <li>Low level & High Level design</li>
+                    <li>IDE - Intellij Idea, Github copilot, MySQL Workbench</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="complimentary-box">
+            <h3>Complimentary</h3>
+            <div class="complimentary-grid">
+                <div class="comp-item">Capstone project - Industry based</div>
+                <div class="comp-item">Communications skills</div>
+                <div class="comp-item">Interview assistance</div>
+                <div class="comp-item">Resume + LinkedIn profile Building</div>
+                <div class="comp-item">Notes</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-brand">
+            <a href="#" class="logo-wrapper">
+                <div class="logo-mark">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M30 20C30 14.4772 34.4772 10 40 10H60C65.5228 10 70 14.4772 70 20V40C70 45.5228 65.5228 50 60 50H40C34.4772 50 30 45.5228 30 40V20Z" fill="#38bdf8"/>
+                        <path d="M30 60C30 54.4772 34.4772 50 40 50H60C65.5228 50 70 54.4772 70 60V80C70 85.5228 65.5228 90 60 90H40C34.4772 90 30 85.5228 30 80V60Z" fill="#818cf8"/>
+                        <path d="M50 30V70" stroke="white" stroke-width="8" stroke-linecap="round"/>
+                        <path d="M40 50H60" stroke="white" stroke-width="8" stroke-linecap="round"/>
+                    </svg>
+                </div>
                 <div class="logo-text">Skil<span>Labs</span></div>
-            </div>
-            <div style="color: #64748b; font-weight: 600;">Industry-Led Training</div>
+            </a>
+            <p class="footer-p">The future of technology is evolving, and we are building the engineers who will shape it.</p>
         </div>
-
-        <div class="hero-section">
-            <div class="content">
-                <div class="badge">🔥 2026 PLACEMENT BOOTCAMP</div>
-                <h1>Industry-Ready <br><span>Data & Backend</span></h1>
-                <p class="description">Master the most in-demand tools with 10+ industry-scale projects. Go from Fundamentals to Senior Developer in 16 weeks.</p>
-
-                <div class="tech-grid">
-                    <div class="tech-item">
-                        <!-- Python Original Colors -->
-                        <svg class="tech-icon" viewBox="0 0 24 24">
-                            <path d="M11.62 0c-2.3 0-2.15 1-2.15 1s.02 1.02.45 1.58c.43.56 1.15.54 1.15.54h3.15s1.2-.07 1.2 1.18v2.75s.1 1.2-1.18 1.2h-4.3s-1.18-.08-1.18 1.2v1.35s.03 1.12 1.05 1.12l4.85-.02s1.43-.1 1.43-1.42V7.15s.15-1.58-1.32-1.58H11.6s-1.2 0-1.2-1.15V1.2s-.03-1.2 1.22-1.2z" fill="#3776ab"/>
-                            <path d="M8.13 5.37c-1.43 0-1.32 1.58-1.32 1.58h3.15s1.15-.02 1.58.42c.43.43.45 1.15.45 1.15V11.3s-.07 1.2-1.2 1.2H6.42s-1.2-.1-1.2 1.15v1.3s.03 1.23 1.2 1.23h4.3s1.2-.08 1.2-1.2l-.02-2.75s.1-1.2-1.2-1.2H6.42s-1.42.06-1.42-1.35V7c0-2.3 3.12-1.6 3.12-1.6z" fill="#ffd343"/>
-                        </svg>
-                        <span class="tech-name">PYTHON</span>
-                    </div>
-                    <div class="tech-item">
-                        <!-- Java Original Colors -->
-                        <svg class="tech-icon" viewBox="0 0 24 24">
-                            <path d="M6.16 19.33c0 .54.55.98 1.45 1.35 1-.22 2.3-.43 3.65-.43 1.43 0 2.5.21 3.23.44.82-.36 1.3-.77 1.3-1.26 0-.6-.73-1.07-2-1.4 a18.8 18.8 0 0 0-6.22 0c-1.4.38-2 1-2 1.3z" fill="#5382a1"/>
-                            <path d="M12.5 0s-2 .5-2 3c0 1 1 2 2 3.5s1 2.5 0 3.5c-.5.5-1 .5-1.5 0 0 0 1 1 1.5 1s1.5-1 1.5-2.5-1-2.5-1.5-4c0-.5 0-1 .5-1.5z" fill="#e76f00"/>
-                        </svg>
-                        <span class="tech-name">JAVA</span>
-                    </div>
-                    <div class="tech-item">
-                        <!-- SQL (PostgreSQL/Generic) Color -->
-                        <svg class="tech-icon" viewBox="0 0 24 24">
-                            <path d="M12 2C6.48 2 2 4.02 2 6.5s4.48 4.5 10 4.5 10-2.02 10-4.5S17.52 2 12 2z" fill="#336791"/>
-                            <path d="M2 12v3c0 2.48 4.48 4.5 10 4.5s10-2.02 10-4.5v-3c0 2.48-4.48 4.5-10 4.5S2 14.48 2 12z" fill="#336791"/>
-                            <path d="M2 17.5v3c0 2.48 4.48 4.5 10 4.5s10-2.02 10-4.5v-3c0 2.48-4.48 4.5-10 4.5S2 19.98 2 17.5z" fill="#336791"/>
-                        </svg>
-                        <span class="tech-name">SQL</span>
-                    </div>
-                    <div class="tech-item">
-                        <!-- Power BI Color -->
-                        <svg class="tech-icon" viewBox="0 0 24 24">
-                            <path d="M19 22.5H5c-.28 0-.5-.22-.5-.5V2c0-.28.22-.5.5-.5h14c.28 0 .5.22.5.5v20c0 .28-.22.5-.5.5z" fill="#F2C811"/>
-                            <path d="M11 19h-2v-8h2v8zm4 0h-2v-5h2v5zm4 0h-2v-2h2v2z" fill="#E1AD0E"/>
-                        </svg>
-                        <span class="tech-name">POWER BI</span>
-                    </div>
-                    <div class="tech-item">
-                        <!-- Pandas Color -->
-                        <svg class="tech-icon" viewBox="0 0 24 24">
-                            <path d="M4.5 4.5h15v15h-15z" fill="#150458"/>
-                            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm3 11h-2v-2h2v2zm-3 0h-2v-2h2v2zm-3 0H7v-2h2v2z" fill="#FFCA00"/>
-                        </svg>
-                        <span class="tech-name">PANDAS</span>
-                    </div>
-                    <div class="tech-item">
-                        <!-- NumPy Original -->
-                        <svg class="tech-icon" viewBox="0 0 24 24">
-                            <path d="M12 2L2.5 7.5v8.9L12 21.9l9.5-5.5V7.5L12 2z" fill="#013243"/>
-                            <path d="M12 2l9.5 5.5v2.8L12 4.8l-9.5 5.5V7.5L12 2z" fill="#4dabcf"/>
-                            <path d="M12 21.9L2.5 16.4V13.6L12 19.1l9.5-5.5v2.8l-9.5 5.5z" fill="#4dabcf"/>
-                        </svg>
-                        <span class="tech-name">NUMPY</span>
-                    </div>
-                    <div class="tech-item">
-                        <!-- Seaborn Original -->
-                        <svg class="tech-icon" viewBox="0 0 24 24">
-                            <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z" fill="#4c8cb5"/>
-                            <path d="M8 12c0 2.209 1.791 4 4 4s4-1.791 4-4-1.791-4-4-4-4 1.791-4 4z" fill="#8dc1e3"/>
-                        </svg>
-                        <span class="tech-name">SEABORN</span>
-                    </div>
-                    <div class="tech-item">
-                        <!-- Matplotlib Original -->
-                        <svg class="tech-icon" viewBox="0 0 24 24">
-                            <path d="M2 22h20V2H2v20z" fill="#11557c"/>
-                            <path d="M5 19h14V5H5v14z" fill="white"/>
-                            <path d="M7 16h2v-6H7v6zm3 0h2V7h-2v9zm3 0h2v-4h-2v4zm3 0h2v-8h-2v8z" fill="#11557c"/>
-                        </svg>
-                        <span class="tech-name">MATPLOTLIB</span>
-                    </div>
-                    <div class="tech-item">
-                        <!-- GitHub Original -->
-                        <svg class="tech-icon" viewBox="0 0 24 24">
-                            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" fill="white"/>
-                        </svg>
-                        <span class="tech-name">GIT/GITHUB</span>
-                    </div>
-                    <div class="tech-item">
-                        <!-- PyTorch Original -->
-                        <svg class="tech-icon" viewBox="0 0 24 24">
-                            <path d="M12 22s8-4 8-10V4l-8-2-8 2v8c0 6 8 10 8 10z" fill="#EE4C2C"/>
-                            <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z" fill="white" opacity="0.3"/>
-                        </svg>
-                        <span class="tech-name">PYTORCH</span>
-                    </div>
-                    <div class="tech-item">
-                        <!-- Scikit-learn Original -->
-                        <svg class="tech-icon" viewBox="0 0 24 24">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z" fill="#F7931E"/>
-                            <path d="M12 22l10-5-10-5-10 5 10 5z" fill="#3670A0"/>
-                        </svg>
-                        <span class="tech-name">SKLEARN</span>
-                    </div>
-                    <div class="tech-item">
-                        <!-- Backend Color -->
-                        <svg class="tech-icon" viewBox="0 0 24 24">
-                            <path d="M4 4h16v16H4V4zm2 2v12h12V6H6zm2 2h8v2H8V8zm0 4h8v2H8v-2z" fill="#38bdf8"/>
-                        </svg>
-                        <span class="tech-name">BACKEND</span>
-                    </div>
-                </div>
-
-                <div class="cta-group">
-                    <a href="#" class="btn btn-primary">Apply Now</a>
-                    <div style="color: #94a3b8; font-size: 0.9rem;">
-                        <strong>Next Cohort:</strong> Mar 25
-                    </div>
-                </div>
+        <div class="footer-links-container">
+            <div class="footer-column">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="mailto:sourabhjinde@gmail.com">sourabhjinde@gmail.com</a></li>
+                    <li><a href="tel:+918446486648">+91 8446486648</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
             </div>
-
-            <div class="side-info">
-                <div class="feature-card">
-                    <div class="feature-item">
-                        <div class="check-circle">✓</div>
-                        <span>Real-world Capstone Projects</span>
-                    </div>
-                    <div class="feature-item">
-                        <div class="check-circle">✓</div>
-                        <span>1-on-1 Mentorship</span>
-                    </div>
-                    <div class="feature-item">
-                        <div class="check-circle">✓</div>
-                        <span>Resume & LinkedIn Review</span>
-                    </div>
-                    <div class="feature-item">
-                        <div class="check-circle">✓</div>
-                        <span>Placement Assistance</span>
-                    </div>
-                </div>
-
-                <div class="feature-card" style="background: linear-gradient(to bottom right, rgba(56,189,248,0.1), transparent);">
-                    <div style="color: var(--accent-blue); font-weight: 800; font-size: 1.5rem; margin-bottom: 5px;">100%</div>
-                    <div style="color: #94a3b8; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Hands-on Curriculum</div>
-                </div>
+            <div class="footer-column">
+                <h4>Social</h4>
+                <ul>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Twitter (X)</a></li>
+                    <li><a href="#">GitHub</a></li>
+                </ul>
             </div>
         </div>
-    </div>
+    </footer>
 
 </body>
 </html>
-
-
 
